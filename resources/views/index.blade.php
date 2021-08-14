@@ -2,8 +2,9 @@
 
 @section('content')
 <!-- Masthead-->
+
 <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
+    <div class="container d-flex align-items-center flex-column" >
         <!-- Masthead Avatar Image-->
         <img class="masthead-avatar mb-5" src="{{ asset('assets/img/invoices.svg')}}" alt="..." />
         <!-- Masthead Heading-->

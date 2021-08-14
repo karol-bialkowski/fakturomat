@@ -33,16 +33,16 @@
             </tr>
             </thead>
             <tbody>
-            @foreach ($customer->invoices as $invoice)
+            @foreach ($customers as $customer)
 
                 <tr>
-                    <th scope="row">{{ ($invoice->id) }}</th>
-                    <td>{{ ($invoice->number) }}</td>
-                    <td>{{ ($invoice->date) }}</td>
-                    <td>{{ ($invoice->total) }}</td>
+                    <th scope="row">{{ ($customer->id) }}</th>
+                    <td>{{ ($customer->name) }}</td>
+                    <td>{{ ($customer->address) }}</td>
+                    <td>{{ ($customer->nip) }}</td>
 
-                    <td><a href="{{ route('invoices.edit', ['id' => $invoice->id]) }}" class="btn btn-primary">Edytuj</a>
-                        <form method="POST" action="{{ route('invoices.delete', ['id' => $invoice->id]) }}">
+                    <td><a href="{{ route('customers.destroy', ['klienci' => $customer->id]) }}" class="btn btn-primary">Edytuj</a>
+                        <form method="POST" action="{{ route('customers.destroy', ['klienci' => $customer->id]) }}">
                             @csrf
                             @method('delete')
 

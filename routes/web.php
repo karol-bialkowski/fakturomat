@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\CustomersController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,6 +34,7 @@ Route::resource('/klienci', CustomersController::class, ['names' => 'customers']
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'register'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'register'])->name('home');
+
 
 

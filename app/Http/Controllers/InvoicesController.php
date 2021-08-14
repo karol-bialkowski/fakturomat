@@ -31,7 +31,7 @@ class InvoicesController extends Controller
         $request->validate([
         'number' =>'required|min:5',
         'date' =>'required|max:15',
-        'total' =>'required|digits:10'
+        'total' =>'required'
         ]);
 
         $invoice = new Invoice();

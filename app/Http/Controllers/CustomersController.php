@@ -108,6 +108,6 @@ class CustomersController extends Controller
     {
         Customer::destroy($id);
 
-        return redirect()-> route('customers.index') -> with('message', 'Usunięto klienta');
+        return redirect()->route('customers.index')->with('message', 'Usunięto klienta');
     }
 }

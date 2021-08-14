@@ -25,16 +25,23 @@
             Menu
             <i class="fas fa-bars"></i>
         </button>
+        @if(Auth::user()!=null)
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('invoices.index') }}">Lista faktur</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('invoices.create') }}">Dodaj fakturę</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('customers.index') }}">Lista klientów</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('customers.create') }}">Dodaj klienta</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('home') }}">Logowanie</a></li>
+            </ul>
+                @endif
+                <ul class="navbar-nav ms-auto">
+                    @if(Auth::user()!=null)
 
+           <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('home') }}">Wyloguj</a>
+                    @endif
             </ul>
         </div>
+
     </div>
 </nav>
 
