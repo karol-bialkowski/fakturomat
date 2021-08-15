@@ -34,7 +34,8 @@ Route::resource('/klienci', CustomersController::class, ['names' => 'customers']
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'register'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'login'])->name('login');
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register');
 
 
 

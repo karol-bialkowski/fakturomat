@@ -3,7 +3,7 @@
 @section('content')
 <!-- Masthead-->
 
-<header class="masthead bg-primary text-white text-center">
+<header class="masthead bg-primary text-white text-center " style="background-image: url('{{ asset('assets/img/bgrnd.jpg') }}'); background-repeat:no-repeat; background-size: cover ">
     <div class="container d-flex align-items-center flex-column" >
         <!-- Masthead Avatar Image-->
         <img class="masthead-avatar mb-5" src="{{ asset('assets/img/invoices.svg')}}" alt="..." />
