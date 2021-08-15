@@ -33,13 +33,20 @@
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('customers.index') }}">Lista klientów</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('customers.create') }}">Dodaj klienta</a></li>
             </ul>
-                @endif
-                <ul class="navbar-nav ms-auto">
-                    @if(Auth::user()!=null)
 
-           <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ route('home') }}">Wyloguj</a>
+                <div class="navbar-nav ms-auto">
+
+                        <div>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"  href="{{ route('logout') }}"
+                                                                 onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Wyloguj</a></li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+
                     @endif
-            </ul>
+
         </div>
 
     </div>
