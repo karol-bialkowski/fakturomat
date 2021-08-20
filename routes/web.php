@@ -21,16 +21,16 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/faktury', [InvoicesController::class, 'index'])->name('invoices.index');
+Route::get('/faktury', [InvoicesController::class, 'index'])->name('invoices.index')->middleware('auth');
 
 
-Route::get('/faktury/dodaj', [InvoicesController::class, 'create'])->name('invoices.create');
-Route::get('/faktury/edytuj/{id}', [InvoicesController::class, 'edit'])->name('invoices.edit');
-Route::post('/faktury/zapisz', [InvoicesController::class, 'store'])->name('invoices.store');
-Route::put('/faktury/zmien/{id}', [InvoicesController::class, 'update'])->name('invoices.update');
-Route::delete('/faktury/usuń/{id}', [InvoicesController::class, 'delete'])->name('invoices.delete');
+Route::get('/faktury/dodaj', [InvoicesController::class, 'create'])->name('invoices.create')->middleware('auth');
+Route::get('/faktury/edytuj/{id}', [InvoicesController::class, 'edit'])->name('invoices.edit')->middleware('auth');;
+Route::post('/faktury/zapisz', [InvoicesController::class, 'store'])->name('invoices.store')->middleware('auth');;
+Route::put('/faktury/zmien/{id}', [InvoicesController::class, 'update'])->name('invoices.update')->middleware('auth');;
+Route::delete('/faktury/usuń/{id}', [InvoicesController::class, 'delete'])->name('invoices.delete')->middleware('auth');;
 
-Route::resource('/klienci', CustomersController::class, ['names' => 'customers']);
+Route::resource('/klienci', CustomersController::class, ['names' => 'customers'])->middleware('auth');;
 
 Auth::routes();
 

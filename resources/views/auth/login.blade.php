@@ -45,18 +45,9 @@
 
                         </div>
 
-                        <!-- Checkbox -->
-                        <div class="form-check d-flex justify-content-start mb-4">
-                            <input
-                                class="form-check-input"
-                                type="checkbox"
-                                value=""
-                                id="form1Example3"
-                                {{ old('remember') ? 'checked' : '' }}
-                            />
-                            <label class="form-check-label" for="form1Example3"> Zapamiętaj mnie </label>
 
-                        </div>
+
+
 
 
                         <button class="btn btn-primary btn-lg btn-block" type="submit"> Zaloguj</button>
